@@ -1,0 +1,73 @@
+# incluir  < stdio.h >
+# incluir  " pico/stdlib.h "
+
+int  principal () {
+
+    stdio_init_all ();
+    gpio_init_mask ( 0x3ff );
+    gpio_set_dir_out_masked ( 0x7f );
+    int numero0= 0x3f ;
+    int numero1= 0x06 ;
+    int numero2= 0x5b ;
+    int numero3= 0x4f ;
+    int numero4= 0x66 ;
+    int numero5= 0x6d ;
+    int numero6= 0x7d ;
+    int numero7= 0x07 ;
+    int numero8= 0x7f ;
+    int numero9= 0x67 ;
+
+    contador int = 0 ;
+
+    mientras ( verdadero ){
+        char val= gpio_get ( 7 );
+        char val1= gpio_get ( 8 );
+        char val2= gpio_get ( 9 );
+
+        si (valor== 1 ) {
+            contador++;
+        }
+        si (val1== 1 ) {
+            contador--;
+        }
+        si (val2== 1 ) {
+            contador= 0 ;
+        }
+        if (contador== 0 ) {
+            gpio_put_masked ( 0x7f , 0x3f );
+        }
+        if (contador== 1 ) {
+            gpio_put_masked ( 0x7f , 0x06 );
+        }
+        if (contador== 2 ) {
+            gpio_put_masked ( 0x7f , 0x5b );
+        }
+        if (contador== 3 ) {
+            gpio_put_masked ( 0x7f , 0x4f );
+        }
+        if (contador== 4 ) {
+            gpio_put_masked ( 0x7f , 0x66 );
+        }
+        if (contador== 5 ) {
+            gpio_put_masked ( 0x7f , 0x6d );
+        }
+        if (contador== 6 ) {
+            gpio_put_masked ( 0x7f , 0x7d );
+        }
+        if (contador== 7 ) {
+           gpio_put_masked ( 0x7f , 0x07 );
+        }
+        if (contador== 8 ) {
+          gpio_put_masked ( 0x7f , 0x7f );
+        }
+        if (contador>= 9 ) {
+            contador= 9 ;
+        }
+        if (contador<= 0 ) {
+            contador= 0 ;
+        }
+
+        dormir_ms ( 200 );
+        printf ( " Contador %d \n " , contador);
+    }
+}
