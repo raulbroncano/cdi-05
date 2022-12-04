@@ -1,4 +1,7 @@
-7 segmentos
+#  7 segmentos  
+
 Alumno: Víctor Broncano
+
 Curso: 4° 1° Aviónica Comisión A
+
 Materia: Control de Interfases
